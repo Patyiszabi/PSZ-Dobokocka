@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.pctb_aladar = new System.Windows.Forms.PictureBox();
             this.pctb_bendeguz = new System.Windows.Forms.PictureBox();
             this.lbl_title = new System.Windows.Forms.Label();
@@ -39,12 +38,20 @@
             this.lbl_aladar_gyozelmek = new System.Windows.Forms.Label();
             this.lbl_bendeguz_gyozelmek = new System.Windows.Forms.Label();
             this.lbl_aladar_6 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.lbl_bendeguz_6 = new System.Windows.Forms.Label();
             this.lbl_aladar_szeria = new System.Windows.Forms.Label();
             this.lbl_bendeguz_szeria = new System.Windows.Forms.Label();
-            this.idozito = new System.Windows.Forms.Timer(this.components);
             this.btn_indulas = new System.Windows.Forms.Button();
+            this.btn_close = new System.Windows.Forms.Button();
+            this.lbl_dobas_dynamic = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_gyozelem_dynamic = new System.Windows.Forms.Label();
+            this.lbl_6_dynamic = new System.Windows.Forms.Label();
+            this.lbl_nyero_dynamic = new System.Windows.Forms.Label();
+            this.lbl_dobasok2_dynamic = new System.Windows.Forms.Label();
+            this.lbl_gyozelmek2_dynamic = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pctb_aladar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctb_bendeguz)).BeginInit();
             this.SuspendLayout();
@@ -146,17 +153,6 @@
             this.lbl_aladar_6.TabIndex = 5;
             this.lbl_aladar_6.Text = "6-os dobások:";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 17);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "6-os dobások:";
-            // 
             // lbl_bendeguz_6
             // 
             this.lbl_bendeguz_6.AutoSize = true;
@@ -171,7 +167,7 @@
             // 
             this.lbl_aladar_szeria.AutoSize = true;
             this.lbl_aladar_szeria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lbl_aladar_szeria.Location = new System.Drawing.Point(59, 216);
+            this.lbl_aladar_szeria.Location = new System.Drawing.Point(56, 216);
             this.lbl_aladar_szeria.Name = "lbl_aladar_szeria";
             this.lbl_aladar_szeria.Size = new System.Drawing.Size(96, 17);
             this.lbl_aladar_szeria.TabIndex = 6;
@@ -187,23 +183,103 @@
             this.lbl_bendeguz_szeria.TabIndex = 6;
             this.lbl_bendeguz_szeria.Text = "Nyerő széria: ";
             // 
-            // idozito
-            // 
-            this.idozito.Tick += new System.EventHandler(this.idozito_Tick);
-            // 
             // btn_indulas
             // 
             this.btn_indulas.BackColor = System.Drawing.Color.SkyBlue;
-            this.btn_indulas.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btn_indulas.Location = new System.Drawing.Point(359, 44);
+            this.btn_indulas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btn_indulas.Location = new System.Drawing.Point(331, 44);
             this.btn_indulas.Margin = new System.Windows.Forms.Padding(0);
             this.btn_indulas.Name = "btn_indulas";
-            this.btn_indulas.Size = new System.Drawing.Size(58, 32);
+            this.btn_indulas.Size = new System.Drawing.Size(111, 32);
             this.btn_indulas.TabIndex = 7;
             this.btn_indulas.Text = "Indulj!";
             this.btn_indulas.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btn_indulas.UseVisualStyleBackColor = false;
             this.btn_indulas.Click += new System.EventHandler(this.btn_indulas_Click);
+            // 
+            // btn_close
+            // 
+            this.btn_close.BackColor = System.Drawing.Color.IndianRed;
+            this.btn_close.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btn_close.Location = new System.Drawing.Point(331, 405);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(111, 32);
+            this.btn_close.TabIndex = 8;
+            this.btn_close.Text = "Kilépés";
+            this.btn_close.UseVisualStyleBackColor = false;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
+            // 
+            // lbl_dobas_dynamic
+            // 
+            this.lbl_dobas_dynamic.AutoSize = true;
+            this.lbl_dobas_dynamic.Location = new System.Drawing.Point(182, 95);
+            this.lbl_dobas_dynamic.Name = "lbl_dobas_dynamic";
+            this.lbl_dobas_dynamic.Size = new System.Drawing.Size(0, 13);
+            this.lbl_dobas_dynamic.TabIndex = 9;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(182, 97);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 9;
+            // 
+            // lbl_gyozelem_dynamic
+            // 
+            this.lbl_gyozelem_dynamic.AutoSize = true;
+            this.lbl_gyozelem_dynamic.Location = new System.Drawing.Point(182, 139);
+            this.lbl_gyozelem_dynamic.Name = "lbl_gyozelem_dynamic";
+            this.lbl_gyozelem_dynamic.Size = new System.Drawing.Size(0, 13);
+            this.lbl_gyozelem_dynamic.TabIndex = 9;
+            // 
+            // lbl_6_dynamic
+            // 
+            this.lbl_6_dynamic.AutoSize = true;
+            this.lbl_6_dynamic.Location = new System.Drawing.Point(182, 181);
+            this.lbl_6_dynamic.Name = "lbl_6_dynamic";
+            this.lbl_6_dynamic.Size = new System.Drawing.Size(0, 13);
+            this.lbl_6_dynamic.TabIndex = 9;
+            // 
+            // lbl_nyero_dynamic
+            // 
+            this.lbl_nyero_dynamic.AutoSize = true;
+            this.lbl_nyero_dynamic.Location = new System.Drawing.Point(182, 218);
+            this.lbl_nyero_dynamic.Name = "lbl_nyero_dynamic";
+            this.lbl_nyero_dynamic.Size = new System.Drawing.Size(0, 13);
+            this.lbl_nyero_dynamic.TabIndex = 9;
+            // 
+            // lbl_dobasok2_dynamic
+            // 
+            this.lbl_dobasok2_dynamic.AutoSize = true;
+            this.lbl_dobasok2_dynamic.Location = new System.Drawing.Point(704, 53);
+            this.lbl_dobasok2_dynamic.Name = "lbl_dobasok2_dynamic";
+            this.lbl_dobasok2_dynamic.Size = new System.Drawing.Size(0, 13);
+            this.lbl_dobasok2_dynamic.TabIndex = 9;
+            // 
+            // lbl_gyozelmek2_dynamic
+            // 
+            this.lbl_gyozelmek2_dynamic.AutoSize = true;
+            this.lbl_gyozelmek2_dynamic.Location = new System.Drawing.Point(704, 137);
+            this.lbl_gyozelmek2_dynamic.Name = "lbl_gyozelmek2_dynamic";
+            this.lbl_gyozelmek2_dynamic.Size = new System.Drawing.Size(0, 13);
+            this.lbl_gyozelmek2_dynamic.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(704, 95);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 13);
+            this.label2.TabIndex = 9;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(704, 179);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 13);
+            this.label3.TabIndex = 9;
             // 
             // Form1
             // 
@@ -211,10 +287,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbl_gyozelmek2_dynamic);
+            this.Controls.Add(this.lbl_dobasok2_dynamic);
+            this.Controls.Add(this.lbl_nyero_dynamic);
+            this.Controls.Add(this.lbl_6_dynamic);
+            this.Controls.Add(this.lbl_gyozelem_dynamic);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbl_dobas_dynamic);
+            this.Controls.Add(this.btn_close);
             this.Controls.Add(this.btn_indulas);
             this.Controls.Add(this.lbl_bendeguz_szeria);
             this.Controls.Add(this.lbl_aladar_szeria);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_bendeguz_6);
             this.Controls.Add(this.lbl_aladar_6);
             this.Controls.Add(this.lbl_bendeguz_gyozelmek);
@@ -247,12 +332,20 @@
         private System.Windows.Forms.Label lbl_aladar_gyozelmek;
         private System.Windows.Forms.Label lbl_bendeguz_gyozelmek;
         private System.Windows.Forms.Label lbl_aladar_6;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl_bendeguz_6;
         private System.Windows.Forms.Label lbl_aladar_szeria;
         private System.Windows.Forms.Label lbl_bendeguz_szeria;
-        private System.Windows.Forms.Timer idozito;
         private System.Windows.Forms.Button btn_indulas;
+        private System.Windows.Forms.Button btn_close;
+        private System.Windows.Forms.Label lbl_dobas_dynamic;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_gyozelem_dynamic;
+        private System.Windows.Forms.Label lbl_6_dynamic;
+        private System.Windows.Forms.Label lbl_nyero_dynamic;
+        private System.Windows.Forms.Label lbl_dobasok2_dynamic;
+        private System.Windows.Forms.Label lbl_gyozelmek2_dynamic;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 
